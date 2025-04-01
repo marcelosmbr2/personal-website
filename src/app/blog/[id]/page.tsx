@@ -59,7 +59,11 @@ interface Response {
   data: Data;
 }
 
-export default async function Post({ params }: { params: { id: string } }) {
+export default async function Post({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const QUERY = `
     query GetPost($id: ItemId) {
         post(filter: {id: {eq: $id}}) {
@@ -79,7 +83,7 @@ export default async function Post({ params }: { params: { id: string } }) {
     }`;
 
   const variables = {
-    id: params.id,
+    id: (await params).id,
   };
 
   const { data } = await performRequest({ query: QUERY, variables });
