@@ -151,7 +151,7 @@ export default async function Stacks() {
               <TooltipTrigger asChild>
                 <div
                   key={index}
-                  className="bg-white dark:bg-neutral-800 cursor-pointer size-24 rounded-xl border border-background shadow-xl"
+                  className="bg-white dark:bg-neutral-800 cursor-pointer size-24 rounded-xl border border-background shadow-lg"
                 >
                   <div className="h-full w-full p-4">
                     <img

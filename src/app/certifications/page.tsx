@@ -14,45 +14,52 @@ import React from "react";
 
 const items = [
   {
-    icon: <Trophy />,
-    title: "Industry Recognition",
-    category: "Achievement",
-    description: "Outstanding Performance Award.",
+    devIcon:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+    name: "Laravel 11: Framework, Ecossistema e Projetos Web",
+    plataform: "Udemy",
     link: "#",
   },
   {
-    icon: <Award />,
-    title: "Excellence Award",
-    category: "Recognition",
-    description: "Best in Category Winner.",
+    devIcon:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    name: "Dominando Banco de Dados com MySQL",
+    plataform: "Udemy",
     link: "#",
   },
   {
-    icon: <Lightbulb />,
-    title: "Innovation Prize",
-    category: "Technology",
-    description: "Breakthrough Solution of the Year.",
+    devIcon:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+    name: "Curso Completo de PHP 7",
+    plataform: "Udemy",
     link: "#",
   },
   {
-    icon: <HeartHandshake />,
-    title: "Customer Success",
-    category: "Service",
-    description: "Top-Rated Solution Provider.",
+    devIcon:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    name: "The Complete Node.js Developer Course",
+    plataform: "Udemy",
     link: "#",
   },
   {
-    icon: <Building2 />,
-    title: "Global Leadership",
-    category: "Management",
-    description: "Executive Team of the Year.",
+    devIcon:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    name: "Docker: Ferramenta essencial para Desenvolvedores",
+    plataform: "Udemy",
     link: "#",
   },
   {
-    icon: <Leaf />,
-    title: "Sustainability Impact",
-    category: "Environmental",
-    description: "Green Initiative Excellence.",
+    devIcon:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    name: "Amazon Web Services (AWS): Essencial",
+    plataform: "Udemy",
+    link: "#",
+  },
+  {
+    devIcon:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg",
+    name: "Sustainability Impact",
+    plataform: "Udemy",
     link: "#",
   },
 ];
@@ -75,27 +82,29 @@ export default function Certifications() {
         <Separator />
         {items.map((item, index) => (
           <React.Fragment key={index}>
-            <div className="grid items-center gap-4 px-4 py-5 md:grid-cols-4">
-              <div className="order-2 flex items-center gap-2 md:order-none">
-                <span className="flex h-14 w-16 shrink-0 items-center justify-center rounded-md bg-muted">
-                  {item.icon}
-                </span>
+            <div className="flex justify-between items-center p-4">
+              <div className="flex items-center gap-2">
+                <div
+                  key={index}
+                  className="bg-white dark:bg-neutral-800 cursor-pointer size-18 rounded-xl border border-background shadow"
+                >
+                  <div className="h-full w-full p-4">
+                    <img
+                      alt="alt"
+                      src={item.devIcon}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
                 <div className="flex flex-col gap-1">
-                  <h3 className="font-semibold">{item.title}</h3>
+                  <h3 className="font-semibold">{item.name}</h3>
                   <p className="text-sm text-muted-foreground">
-                    {item.category}
+                    {item.plataform}
                   </p>
                 </div>
               </div>
-              <p className="order-1 text-2xl font-semibold md:order-none md:col-span-2">
-                {item.description}
-              </p>
-              <Button variant="outline" asChild>
-                <a
-                  className="order-3 ml-auto w-fit gap-2 md:order-none"
-                  href={item.link}
-                >
-                  <span>View project</span>
+              <Button asChild>
+                <a href={item.link} target="_blank">
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
