@@ -64,12 +64,12 @@ export const FooterWithCarousel = () => {
   const cardData = [
     {
       title: "Home",
-      description: "Quem sou eu",
+      description: "Página inicial",
       icon: <HomeIcon className="w-6 h-6" />,
       route: "/",
     },
     {
-      title: "Skills",
+      title: "Habilidades",
       description: "Minhas habilidades",
       icon: <Brain className="w-6 h-6" />,
       route: "/skills",

@@ -68,7 +68,7 @@ export default function Certifications() {
           Certificações
         </h2>
         <p className="mb-12 text-muted-foreground md:text-base lg:text-lg">
-          Descrição
+          Conhecimento validado por cursos reconhecidos no mercado.
         </p>
       </div>
       <div className="flex flex-col">

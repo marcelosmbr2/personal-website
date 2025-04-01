@@ -1,138 +1,169 @@
 import { ArrowRight } from "lucide-react";
-
+import { performRequest } from "@/lib/datocms";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-interface Post {
+interface Project {
   id: string;
-  title: string;
-  summary: string;
-  label: string;
-  author: string;
-  published: string;
-  url: string;
-  image: string;
-}
-
-interface BlogType {
-  tagline: string;
-  heading: string;
+  name: string;
+  phase: string;
   description: string;
-  buttonText: string;
-  buttonUrl: string;
-  posts: Post[];
+  technologies: string;
+  image: { url: string };
+  repositoryLink: string;
+  deployLink: string;
+  category: string;
 }
 
-const data: BlogType = {
-  tagline: "Latest Updates",
-  heading: "Blog Posts",
-  description:
-    "Discover the latest trends, tips, and best practices in modern web development. From UI components to design systems, stay updated with our expert insights.",
-  buttonText: "View all articles",
-  buttonUrl: "https://shadcnblocks.com",
-  posts: [
-    {
-      id: "post-1",
-      title: "Getting Started with shadcn/ui Components",
-      summary:
-        "Learn how to quickly integrate and customize shadcn/ui components in your Next.js projects. We'll cover installation, theming, and best practices for building modern interfaces.",
-      label: "Tutorial",
-      author: "Sarah Chen",
-      published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "post-2",
-      title: "Building Accessible Web Applications",
-      summary:
-        "Explore how to create inclusive web experiences using shadcn/ui's accessible components. Discover practical tips for implementing ARIA labels, keyboard navigation, and semantic HTML.",
-      label: "Accessibility",
-      author: "Marcus Rodriguez",
-      published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "post-3",
-      title: "Modern Design Systems with Tailwind CSS",
-      summary:
-        "Dive into creating scalable design systems using Tailwind CSS and shadcn/ui. Learn how to maintain consistency while building flexible and maintainable component libraries.",
-      label: "Design Systems",
-      author: "Emma Thompson",
-      published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-    },
-  ],
-};
+const QUERY = `
+  query {
+    allProjects {
+        id
+        name
+        phase
+        technologies
+        description
+        repositoryLink
+        deployLink
+        category
+        image {
+          url
+        }
+      }
+  }
+`;
 
-export default function Projects() {
+export default async function Projects() {
+  const {
+    data: { allProjects },
+  } = await performRequest({ query: QUERY });
+
+  const projetos = allProjects.filter(
+    (project: Project) => project.category === "projeto"
+  );
+  const estudos = allProjects.filter(
+    (project: Project) => project.category === "estudo"
+  );
+
   return (
     <section className="container mx-auto">
       <div className="mx-auto max-w-3xl text-center">
         <Badge variant="secondary" className="mb-6">
-          Meus Projetos
+          Portfólio
         </Badge>
         <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">
-          Projetos
+          Meus Projetos
         </h2>
         <p className="mb-12 text-muted-foreground md:text-base lg:text-lg">
-          {data.description}
+          Explore meus trabalhos mais recentes, como aplicações web completas e
+          experimentos.
         </p>
       </div>
-
-      <div className="mx-auto max-w-5xl space-y-12">
-        {data.posts.map((post) => (
-          <Card
-            key={post.id}
-            className="overflow-hidden border-0 bg-transparent shadow-none"
-          >
-            <div className="flex flex-col gap-6 sm:flex-row">
-              <div className="shrink-0">
-                <a
-                  href={post.url}
-                  target="_blank"
-                  className="block transition-opacity duration-200 hover:opacity-90"
+      <Tabs defaultValue="1" className="mx-auto max-w-5xl space-y-12 px-4">
+        <TabsList className="w-full mx-auto max-w-sm">
+          <TabsTrigger value="1">Projetos</TabsTrigger>
+          <TabsTrigger value="2">Estudos</TabsTrigger>
+        </TabsList>
+        <TabsContent value="1">
+          <div className="mx-auto max-w-5xl space-y-12">
+            {projetos.length > 0 ? (
+              projetos.map((project: Project) => (
+                <Card
+                  key={project.id}
+                  className="overflow-hidden border-0 bg-transparent shadow-none"
                 >
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="aspect-[16/9] w-full rounded-lg object-cover object-center sm:w-[260px]"
-                  />
-                </a>
-              </div>
-              <div className="flex-1 space-y-3">
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <Badge variant="secondary">{post.label}</Badge>
-                  <span>{post.author}</span>
-                  <span>{post.published}</span>
-                </div>
-                <h3 className="text-xl leading-tight font-bold lg:text-2xl">
-                  <a
-                    href={post.url}
-                    target="_blank"
-                    className="hover:underline"
-                  >
-                    {post.title}
-                  </a>
-                </h3>
-                <p className="text-base text-muted-foreground">
-                  {post.summary}
-                </p>
-                <a
-                  href={post.url}
-                  target="_blank"
-                  className="inline-flex items-center text-primary hover:underline"
+                  <div className="flex flex-col gap-6 sm:flex-row">
+                    <div className="shrink-0">
+                      <div className="block transition-opacity duration-200 hover:opacity-90">
+                        <img
+                          src={project.image.url}
+                          alt={project.name}
+                          className="aspect-[16/9] w-full rounded-lg object-cover object-center sm:w-[260px]"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <Badge variant="secondary">{project.phase}</Badge>
+                        <span>{project.technologies}</span>
+                      </div>
+                      <h3 className="text-xl leading-tight font-bold lg:text-2xl">
+                        <div className="hover:underline">{project.name}</div>
+                      </h3>
+                      <p className="text-base text-muted-foreground">
+                        {project.description}
+                      </p>
+                      <a
+                        href={project.repositoryLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-primary hover:underline"
+                      >
+                        Repositório
+                        <ArrowRight className="ml-2 size-4" />
+                      </a>
+                    </div>
+                  </div>
+                </Card>
+              ))
+            ) : (
+              <p className="text-center text-muted-foreground">
+                Nenhum projeto encontrado
+              </p>
+            )}
+          </div>
+        </TabsContent>
+        <TabsContent value="2">
+          <div className="mx-auto max-w-5xl space-y-12">
+            {estudos.length > 0 ? (
+              estudos.map((project: Project) => (
+                <Card
+                  key={project.id}
+                  className="overflow-hidden border-0 bg-transparent shadow-none"
                 >
-                  Read more
-                  <ArrowRight className="ml-2 size-4" />
-                </a>
-              </div>
-            </div>
-          </Card>
-        ))}
-      </div>
+                  <div className="flex flex-col gap-6 sm:flex-row">
+                    <div className="shrink-0">
+                      <div className="block transition-opacity duration-200 hover:opacity-90">
+                        <img
+                          src={project.image.url}
+                          alt={project.name}
+                          className="aspect-[16/9] w-full rounded-lg object-cover object-center sm:w-[260px]"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <Badge variant="secondary">{project.phase}</Badge>
+                        <span>{project.technologies}</span>
+                      </div>
+                      <h3 className="text-xl leading-tight font-bold lg:text-2xl">
+                        <div className="hover:underline">{project.name}</div>
+                      </h3>
+                      <p className="text-base text-muted-foreground">
+                        {project.description}
+                      </p>
+                      <a
+                        href={project.repositoryLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-primary hover:underline"
+                      >
+                        Repositório
+                        <ArrowRight className="ml-2 size-4" />
+                      </a>
+                    </div>
+                  </div>
+                </Card>
+              ))
+            ) : (
+              <p className="text-center text-muted-foreground">
+                Nenhum estudo encontrado
+              </p>
+            )}
+          </div>
+        </TabsContent>
+      </Tabs>
     </section>
   );
 }
