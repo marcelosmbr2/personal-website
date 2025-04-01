@@ -18,49 +18,49 @@ const items = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
     name: "Laravel 11: Framework, Ecossistema e Projetos Web",
     plataform: "Udemy",
-    link: "#",
+    link: "https://www.udemy.com/course/laravel-11-framework-ecossistema-e-projetos-web/?couponCode=KEEPLEARNINGBR",
   },
   {
     devIcon:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
     name: "Dominando Banco de Dados com MySQL",
     plataform: "Udemy",
-    link: "#",
+    link: "https://www.udemy.com/course/curso-mysql/",
   },
   {
     devIcon:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
     name: "Curso Completo de PHP 7",
     plataform: "Udemy",
-    link: "#",
+    link: "https://www.udemy.com/course/curso-php-7-online/",
   },
   {
     devIcon:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
     name: "The Complete Node.js Developer Course",
     plataform: "Udemy",
-    link: "#",
+    link: "The Complete Node.js Developer Course (3rd Edition)",
   },
   {
     devIcon:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
     name: "Docker: Ferramenta essencial para Desenvolvedores",
     plataform: "Udemy",
-    link: "#",
+    link: "https://www.udemy.com/course/curso-docker/?couponCode=KEEPLEARNINGBR",
   },
   {
     devIcon:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
     name: "Amazon Web Services (AWS): Essencial",
     plataform: "Udemy",
-    link: "#",
+    link: "https://www.udemy.com/course/amazon-web-services-essencial/",
   },
   {
     devIcon:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg",
-    name: "Sustainability Impact",
+    name: "Ethereum and Solidity: The Complete Developer's Guide",
     plataform: "Udemy",
-    link: "#",
+    link: "https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/",
   },
 ];
 
