@@ -1,11 +1,5 @@
 import * as React from "react";
 import { Badge } from "@/components/ui/badge";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 
 const data = [
   {
@@ -90,7 +84,7 @@ const data = [
     id: 14,
     devIcon:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
-    name: "Express",
+    name: "Express.js",
   },
   {
     id: 15,
@@ -144,29 +138,25 @@ export default async function Stacks() {
           Tecnologias que já utilizei e utilizo no meu dia a dia.
         </p>
       </div>
-      <div className="max-w-sm md:max-w-xl mx-auto flex flex-wrap justify-center items-center gap-2">
+      <div className="max-w-sm md:max-w-xl mx-auto flex flex-wrap justify-center items-center gap-4">
         {data.map((item, index) => (
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div
-                  key={index}
-                  className="bg-white dark:bg-neutral-800 cursor-pointer size-24 rounded-xl border border-background shadow-lg"
-                >
-                  <div className="h-full w-full p-4">
-                    <img
-                      alt={`Skill ${index + 1}`}
-                      src={item.devIcon}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{item.name}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <div
+            key={item.id}
+            className="relative bg-white dark:bg-neutral-800 size-24 rounded-xl border border-background shadow-lg flex flex-col"
+          >
+            <div className="h-16 w-full p-4 flex-1">
+              <img
+                alt={`Skill ${index + 1}`}
+                src={item.devIcon}
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 flex justify-center">
+              <Badge className="mb-[-10px] text-xs">
+                {item.name}
+              </Badge>
+            </div>
+          </div>
         ))}
       </div>
     </section>
