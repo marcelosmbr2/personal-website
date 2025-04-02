@@ -100,7 +100,9 @@ export default async function Blog() {
                       <span>{post.tags}</span>
                     </div>
                     <h3 className="text-xl leading-tight font-bold lg:text-2xl">
-                      <a href={"/blog/" + post.id} className="hover:underline">{post.name}</a>
+                      <a href={"/blog/" + post.id} className="hover:underline">
+                        {post.name}
+                      </a>
                     </h3>
                     <p className="text-base text-muted-foreground">
                       {post.description}
@@ -148,14 +150,13 @@ export default async function Blog() {
                     <p className="text-base text-muted-foreground">
                       {post.description}
                     </p>
-                    <a
-                      href=""
-                      target="_blank"
+                    <Link
+                      href={"/blog/" + post.id}
                       className="inline-flex items-center text-primary hover:underline"
                     >
                       Ler mais
                       <ArrowRight className="ml-2 size-4" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Card>
