@@ -15,6 +15,7 @@ interface Post {
   description: string;
   category: string;
   tags: string;
+  externalLink?: string;
   image: { url: string };
   _createdAt: string;
   _updatedAt: string;
@@ -30,6 +31,7 @@ const QUERY = `
       id
       name
       tags
+      externalLink
       image {
         url
       }
@@ -100,20 +102,31 @@ export default async function Blog() {
                       <span>{post.tags}</span>
                     </div>
                     <h3 className="text-xl leading-tight font-bold lg:text-2xl">
-                      <a href={"/blog/" + post.id} className="hover:underline">
-                        {post.name}
-                      </a>
+                      {post.name}
                     </h3>
                     <p className="text-base text-muted-foreground">
                       {post.description}
                     </p>
-                    <Link
-                      href={"/blog/" + post.id}
-                      className="inline-flex items-center text-primary hover:underline"
-                    >
-                      Ler mais
-                      <ArrowRight className="ml-2 size-4" />
-                    </Link>
+                    {post.externalLink && (
+                      <a
+                        target="_blank"
+                        href={post.externalLink}
+                        className="inline-flex items-center text-primary hover:underline"
+                      >
+                        Ler no LinkedIn
+                        <ArrowRight className="ml-2 size-4" />
+                      </a>
+                    )}
+
+                    {!post.externalLink && (
+                      <Link
+                        href={"/blog/" + post.id}
+                        className="inline-flex items-center text-primary hover:underline"
+                      >
+                        Ler mais
+                        <ArrowRight className="ml-2 size-4" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </Card>
@@ -145,7 +158,7 @@ export default async function Blog() {
                       <span>{post.tags}</span>
                     </div>
                     <h3 className="text-xl leading-tight font-bold lg:text-2xl">
-                      <div className="hover:underline">{post.name}</div>
+                      {post.name}
                     </h3>
                     <p className="text-base text-muted-foreground">
                       {post.description}
