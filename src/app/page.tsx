@@ -17,14 +17,7 @@ export default function Home() {
       <div className="relative z-10 container">
         <div className="mx-auto flex max-w-5xl flex-col items-center">
           <div className="flex flex-col items-center gap-6 text-center">
-            <div className="rounded-xl bg-background/30 p-4 shadow-sm backdrop-blur-sm">
-              <Image
-                src="https://shadcnblocks.com/images/block/block-1.svg"
-                alt="app logo"
-                width={28}
-                height={28}
-              />
-            </div>
+           
             <div>
               <h1 className="mb-6 text-2xl font-bold tracking-tight text-pretty lg:text-5xl">
                 MarceloSMBR
