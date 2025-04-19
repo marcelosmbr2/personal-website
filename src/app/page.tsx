@@ -19,7 +19,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-6 text-center">
             <div>
               <h1 className="mb-6 text-2xl font-bold tracking-tight text-pretty lg:text-5xl">
-                MarceloSM
+                Marcelo Moreira
               </h1>
               <p className="mx-auto max-w-3xl text-muted-foreground lg:text-xl">
                 Desenvolvedor Full Stack
