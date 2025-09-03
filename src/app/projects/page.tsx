@@ -97,7 +97,7 @@ export default async function Projects() {
                         href={project.repositoryLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-primary hover:underline"
+                        className="inline-flex items-center text-secondary hover:underline"
                       >
                         Repositório
                         <ArrowRight className="ml-2 size-4" />
@@ -146,7 +146,7 @@ export default async function Projects() {
                         href={project.repositoryLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-primary hover:underline"
+                        className="inline-flex items-center text-secondary hover:underline"
                       >
                         Repositório
                         <ArrowRight className="ml-2 size-4" />
