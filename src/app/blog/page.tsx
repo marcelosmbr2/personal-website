@@ -110,7 +110,7 @@ export default async function Blog() {
                       <a
                         target="_blank"
                         href={post.externalLink}
-                        className="inline-flex items-center text-primary hover:underline"
+                        className="inline-flex items-center text-secondary hover:underline"
                       >
                         Ler no LinkedIn
                         <ArrowRight className="ml-2 size-4" />
@@ -120,7 +120,7 @@ export default async function Blog() {
                     {!post.externalLink && (
                       <Link
                         href={"/blog/" + post.id}
-                        className="inline-flex items-center text-primary hover:underline"
+                        className="inline-flex items-center text-secondary hover:underline"
                       >
                         Ler mais
                         <ArrowRight className="ml-2 size-4" />
@@ -164,7 +164,7 @@ export default async function Blog() {
                     </p>
                     <Link
                       href={"/blog/" + post.id}
-                      className="inline-flex items-center text-primary hover:underline"
+                      className="inline-flex items-center text-secondary hover:underline"
                     >
                       Ler mais
                       <ArrowRight className="ml-2 size-4" />

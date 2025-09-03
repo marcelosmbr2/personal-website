@@ -47,7 +47,6 @@ export function FloatingNavbar() {
   ];
   return (
     <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
       />
   );

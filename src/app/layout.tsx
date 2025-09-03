@@ -39,10 +39,12 @@ export default function RootLayout({
         >
           <div className="flex flex-col h-full">
             <Header />
-            <main className="flex-1 overflow-y-auto pt-16 pb-48">
+            <main className="flex-1 overflow-y-auto pt-16 pb-24">
               {children}
             </main>
-            <FloatingNavbar />
+            <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-4">
+              <FloatingNavbar />
+            </div>
           </div>
         </ThemeProvider>
       </body>
