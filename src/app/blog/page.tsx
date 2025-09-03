@@ -88,34 +88,38 @@ export default async function Blog() {
                   alt="alt"
                   className="aspect-[4/3] w-full object-cover object-center"
                 />
-                <div className="px-6 py-4 space-y-3">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="px-6 py-4 flex flex-col h-48">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
                     <Badge variant="secondary">{formatDate(post._createdAt)}</Badge>
                     <span>{post.tags}</span>
                   </div>
-                  <h3 className="text-lg leading-tight font-bold lg:text-xl">{post.name}</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-3">{post.description}</p>
-                  {post.externalLink && (
-                    <a
-                      target="_blank"
-                      href={post.externalLink}
-                      className="inline-flex items-center text-secondary hover:underline text-sm"
-                      rel="noreferrer"
-                    >
-                      Ler no LinkedIn
-                      <ArrowRight className="ml-2 size-4" />
-                    </a>
-                  )}
+                  <h3 className="text-lg leading-tight font-bold lg:text-xl mb-3">{post.name}</h3>
+                  <p className="text-sm text-muted-foreground flex-1 overflow-hidden text-ellipsis line-clamp-3 mb-3">
+                    {post.description}
+                  </p>
+                  <div className="mt-auto">
+                    {post.externalLink && (
+                      <a
+                        target="_blank"
+                        href={post.externalLink}
+                        className="inline-flex items-center text-secondary hover:underline text-sm"
+                        rel="noreferrer"
+                      >
+                        Ler no LinkedIn
+                        <ArrowRight className="ml-2 size-4" />
+                      </a>
+                    )}
 
-                  {!post.externalLink && (
-                    <Link
-                      href={"/blog/" + post.id}
-                      className="inline-flex items-center text-secondary hover:underline text-sm"
-                    >
-                      Ler mais
-                      <ArrowRight className="ml-2 size-4" />
-                    </Link>
-                  )}
+                    {!post.externalLink && (
+                      <Link
+                        href={"/blog/" + post.id}
+                        className="inline-flex items-center text-secondary hover:underline text-sm"
+                      >
+                        Ler mais
+                        <ArrowRight className="ml-2 size-4" />
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </Card>
             ))}
@@ -133,20 +137,24 @@ export default async function Blog() {
                   alt="alt"
                   className="aspect-[4/3] w-full object-cover object-center"
                 />
-                <div className="px-6 py-4 space-y-3">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="px-6 py-4 flex flex-col h-48">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
                     <Badge variant="secondary">{formatDate(post._createdAt)}</Badge>
                     <span>{post.tags}</span>
                   </div>
-                  <h3 className="text-lg leading-tight font-bold lg:text-xl">{post.name}</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-3">{post.description}</p>
-                  <Link
-                    href={"/blog/" + post.id}
-                    className="inline-flex items-center text-secondary hover:underline text-sm"
-                  >
-                    Ler mais
-                    <ArrowRight className="ml-2 size-4" />
-                  </Link>
+                  <h3 className="text-lg leading-tight font-bold lg:text-xl mb-3">{post.name}</h3>
+                  <p className="text-sm text-muted-foreground flex-1 overflow-hidden text-ellipsis line-clamp-3 mb-3">
+                    {post.description}
+                  </p>
+                  <div className="mt-auto">
+                    <Link
+                      href={"/blog/" + post.id}
+                      className="inline-flex items-center text-secondary hover:underline text-sm"
+                    >
+                      Ler mais
+                      <ArrowRight className="ml-2 size-4" />
+                    </Link>
+                  </div>
                 </div>
               </Card>
             ))}
