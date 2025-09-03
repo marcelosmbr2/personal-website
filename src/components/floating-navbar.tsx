@@ -16,7 +16,7 @@ export function FloatingNavbar() {
     {
       title: "Experiências",
       icon: (
-        <IconFileTextSpark className="h-full w-full text-neutral-500 text-neutral-800 dark:text-neutral-300" />
+        <IconBrain className="h-full w-full text-neutral-500 text-neutral-800 dark:text-neutral-300" />
       ),
       href: "/resume",
     },
