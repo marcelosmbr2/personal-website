@@ -50,6 +50,14 @@ const items = [
     description: "Explore os principais serviços da AWS e aprenda a construir infraestrutura escalável na nuvem.",
     link: "https://www.udemy.com/course/amazon-web-services-essencial/",
   },
+  {
+    devIcon:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    name: "MongoDB do básico ao avançado (c/ Mongoose e projetos)",
+    plataform: "Udemy",
+    description: "Aprenda tudo sobre MongoDB, NoSQL e Mongoose, do básico ao avançado e criando projetos práticos!",
+    link: "https://www.udemy.com/course/mongodb-do-basico-ao-avancado-c-mongoose-e-projetos",
+  },
 ]
 
 export default function Certifications() {
