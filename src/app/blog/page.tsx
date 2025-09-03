@@ -60,7 +60,7 @@ export default async function Blog() {
 
   return (
     <section className="container mx-auto">
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto text-center">
         <IconBrandBlogger className="mx-auto mb-8 h-8 w-8 text-neutral-500 text-primary" />
         <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">
           Blog Pessoal
@@ -77,99 +77,76 @@ export default async function Blog() {
           <TabsTrigger value="2">Filosofia</TabsTrigger>
         </TabsList>
         <TabsContent value="1">
-          <div className="mx-auto max-w-5xl space-y-12">
+          <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-8">
             {tech.map((post: Post) => (
               <Card
                 key={post.id}
-                className="overflow-hidden border-0 bg-transparent shadow-none"
+                className="overflow-hidden border shadow-sm p-0 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
               >
-                <div className="flex flex-col gap-6 sm:flex-row">
-                  <div className="shrink-0">
-                    <div className="block transition-opacity duration-200 hover:opacity-90">
-                      <img
-                        src={post.image.url}
-                        alt="alt"
-                        className="aspect-[16/9] w-full rounded-lg object-cover object-center sm:w-[260px]"
-                      />
-                    </div>
+                <img
+                  src={post.image.url || "/placeholder.svg"}
+                  alt="alt"
+                  className="aspect-[4/3] w-full object-cover object-center"
+                />
+                <div className="px-6 py-4 space-y-3">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <Badge variant="secondary">{formatDate(post._createdAt)}</Badge>
+                    <span>{post.tags}</span>
                   </div>
-                  <div className="flex-1 space-y-3">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <Badge variant="secondary">
-                        {formatDate(post._createdAt)}
-                      </Badge>
-                      <span>{post.tags}</span>
-                    </div>
-                    <h3 className="text-xl leading-tight font-bold lg:text-2xl">
-                      {post.name}
-                    </h3>
-                    <p className="text-base text-muted-foreground">
-                      {post.description}
-                    </p>
-                    {post.externalLink && (
-                      <a
-                        target="_blank"
-                        href={post.externalLink}
-                        className="inline-flex items-center text-secondary hover:underline"
-                      >
-                        Ler no LinkedIn
-                        <ArrowRight className="ml-2 size-4" />
-                      </a>
-                    )}
+                  <h3 className="text-lg leading-tight font-bold lg:text-xl">{post.name}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-3">{post.description}</p>
+                  {post.externalLink && (
+                    <a
+                      target="_blank"
+                      href={post.externalLink}
+                      className="inline-flex items-center text-secondary hover:underline text-sm"
+                      rel="noreferrer"
+                    >
+                      Ler no LinkedIn
+                      <ArrowRight className="ml-2 size-4" />
+                    </a>
+                  )}
 
-                    {!post.externalLink && (
-                      <Link
-                        href={"/blog/" + post.id}
-                        className="inline-flex items-center text-secondary hover:underline"
-                      >
-                        Ler mais
-                        <ArrowRight className="ml-2 size-4" />
-                      </Link>
-                    )}
-                  </div>
+                  {!post.externalLink && (
+                    <Link
+                      href={"/blog/" + post.id}
+                      className="inline-flex items-center text-secondary hover:underline text-sm"
+                    >
+                      Ler mais
+                      <ArrowRight className="ml-2 size-4" />
+                    </Link>
+                  )}
                 </div>
               </Card>
             ))}
           </div>
         </TabsContent>
         <TabsContent value="2">
-          <div className="mx-auto max-w-5xl space-y-12">
+          <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-8">
             {philosophy.map((post: Post) => (
               <Card
                 key={post.id}
-                className="overflow-hidden border-0 bg-transparent shadow-none"
+                className="overflow-hidden border shadow-sm p-0 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
               >
-                <div className="flex flex-col gap-6 sm:flex-row">
-                  <div className="shrink-0">
-                    <div className="block transition-opacity duration-200 hover:opacity-90">
-                      <img
-                        src={post.image.url}
-                        alt="alt"
-                        className="aspect-[16/9] w-full rounded-lg object-cover object-center sm:w-[260px]"
-                      />
-                    </div>
+                <img
+                  src={post.image.url || "/placeholder.svg"}
+                  alt="alt"
+                  className="aspect-[4/3] w-full object-cover object-center"
+                />
+                <div className="px-6 py-4 space-y-3">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <Badge variant="secondary">{formatDate(post._createdAt)}</Badge>
+                    <span>{post.tags}</span>
                   </div>
-                  <div className="flex-1 space-y-3">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <Badge variant="secondary">
-                        {formatDate(post._createdAt)}
-                      </Badge>
-                      <span>{post.tags}</span>
-                    </div>
-                    <h3 className="text-xl leading-tight font-bold lg:text-2xl">
-                      {post.name}
-                    </h3>
-                    <p className="text-base text-muted-foreground">
-                      {post.description}
-                    </p>
-                    <Link
-                      href={"/blog/" + post.id}
-                      className="inline-flex items-center text-secondary hover:underline"
-                    >
-                      Ler mais
-                      <ArrowRight className="ml-2 size-4" />
-                    </Link>
-                  </div>
+                  <h3 className="text-lg leading-tight font-bold lg:text-xl">{post.name}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-3">{post.description}</p>
+                  <Link
+                    href={"/blog/" + post.id}
+                    className="inline-flex items-center text-secondary hover:underline text-sm"
+                  >
+                    Ler mais
+                    <ArrowRight className="ml-2 size-4" />
+                  </Link>
                 </div>
               </Card>
             ))}
