@@ -1,51 +1,45 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import {
-  ArrowRight,
-  Award,
-  Building2,
-  HeartHandshake,
-  Leaf,
-  Lightbulb,
-  Trophy,
-} from "lucide-react";
-import React from "react";
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { IconCertificate } from "@tabler/icons-react"
 
 const items = [
   {
-    devIcon:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+    devIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
     name: "Laravel 11: Framework, Ecossistema e Projetos Web",
     plataform: "Udemy",
+    description:
+      "Domine o framework Laravel 11 e construa aplicações web modernas e robustas com as melhores práticas do mercado.",
     link: "https://www.udemy.com/course/laravel-11-framework-ecossistema-e-projetos-web/?couponCode=KEEPLEARNINGBR",
   },
   {
-    devIcon:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    devIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
     name: "Dominando Banco de Dados com MySQL",
     plataform: "Udemy",
+    description:
+      "Aprenda MySQL do básico ao avançado, incluindo modelagem, consultas complexas e otimização de performance.",
     link: "https://www.udemy.com/course/curso-mysql/",
   },
   {
-    devIcon:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+    devIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
     name: "Curso Completo de PHP 7",
     plataform: "Udemy",
+    description:
+      "Desenvolva aplicações web dinâmicas com PHP 7, desde conceitos básicos até recursos avançados da linguagem.",
     link: "https://www.udemy.com/course/curso-php-7-online/",
   },
   {
-    devIcon:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    devIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
     name: "The Complete Node.js Developer Course",
     plataform: "Udemy",
+    description: "Master Node.js by building real-world applications with Express, MongoDB, Socket.io and more.",
     link: "The Complete Node.js Developer Course (3rd Edition)",
   },
   {
-    devIcon:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    devIcon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
     name: "Docker: Ferramenta essencial para Desenvolvedores",
     plataform: "Udemy",
+    description: "Containerize suas aplicações com Docker e aprenda sobre orquestração, volumes e redes.",
     link: "https://www.udemy.com/course/curso-docker/?couponCode=KEEPLEARNINGBR",
   },
   {
@@ -53,64 +47,47 @@ const items = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
     name: "Amazon Web Services (AWS): Essencial",
     plataform: "Udemy",
+    description: "Explore os principais serviços da AWS e aprenda a construir infraestrutura escalável na nuvem.",
     link: "https://www.udemy.com/course/amazon-web-services-essencial/",
   },
-  {
-    devIcon:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg",
-    name: "Ethereum and Solidity: The Complete Developer's Guide",
-    plataform: "Udemy",
-    link: "https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/",
-  },
-];
+]
 
 export default function Certifications() {
   return (
     <section className="container mx-auto">
-      <div className="mx-auto max-w-3xl text-center">
-        <Badge variant="secondary" className="mb-6">
-          Cursos
-        </Badge>
-        <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">
-          Certificações
-        </h2>
+      <div className="mx-auto max-w-3xl text-center mb-12">
+        <IconCertificate className="mx-auto mb-8 h-8 w-8 text-primary" />
+        <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">Cursos</h2>
         <p className="mb-12 text-muted-foreground md:text-base lg:text-lg">
           Conhecimento validado por cursos reconhecidos no mercado.
         </p>
       </div>
-      <div className="flex flex-col">
-        <Separator />
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {items.map((item, index) => (
-          <React.Fragment key={index}>
-            <div className="flex justify-between items-center p-4">
-              <div className="flex items-center gap-2">
-                <div
-                  key={index}
-                  className="bg-white dark:bg-neutral-800 cursor-pointer size-18 rounded-xl border border-background shadow"
-                >
-                  <div className="h-full w-full p-4">
-                    <img
-                      alt="alt"
-                      src={item.devIcon}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <h3 className="font-semibold">{item.name}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {item.plataform}
-                  </p>
-                </div>
+          <Card key={index} className="flex flex-col h-full">
+            <CardHeader className="pb-4">
+              <div className="mx-auto mb-4 bg-white dark:bg-neutral-800 size-16 rounded-xl border border-background shadow flex items-center justify-center">
+                <img alt={item.name} src={item.devIcon || "/placeholder.svg"} className="h-10 w-10 object-contain" />
               </div>
-              <Button asChild>
-                <a href={item.link} target="_blank">
-                  <ArrowRight className="h-4 w-4" />
+              <Badge variant="secondary" className="w-fit mx-auto mb-2">
+                {item.plataform}
+              </Badge>
+            </CardHeader>
+
+            <CardContent className="flex-1 text-center">
+              <h3 className="font-semibold text-lg mb-2 text-balance">{item.name}</h3>
+              <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
+            </CardContent>
+
+            <CardFooter className="pt-0">
+              <Button variant="secondary" className="w-full" asChild>
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  Ver Curso
                 </a>
               </Button>
-            </div>
-            <Separator />
-          </React.Fragment>
+            </CardFooter>
+          </Card>
         ))}
       </div>
     </section>

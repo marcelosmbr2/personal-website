@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { Header } from "@/components/header";
-import { FooterWithCarousel } from "@/components/footer-carousel";
+import { FloatingNavbar } from "@/components/floating-navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
@@ -42,7 +42,7 @@ export default function RootLayout({
             <main className="flex-1 overflow-y-auto pt-16 pb-48">
               {children}
             </main>
-            <FooterWithCarousel />
+            <FloatingNavbar />
           </div>
         </ThemeProvider>
       </body>

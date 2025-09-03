@@ -1,6 +1,5 @@
-import { Badge } from "@/components/ui/badge";
 import { performRequest } from "@/lib/datocms";
-import { format } from "date-fns/format";
+import { IconBrandBlogger } from "@tabler/icons-react";
 
 interface Post {
   id: string;
@@ -117,9 +116,7 @@ export default async function Post({
   return (
     <section className="container mx-auto">
       <div className="mx-auto text-center">
-        <Badge variant="secondary" className="mb-6">
-          {format(new Date(data.post._updatedAt), "MMM. d, yyyy")}
-        </Badge>
+        <IconBrandBlogger className="mx-auto mb-8 h-8 w-8 text-neutral-500 text-primary" />
         <h2 className="mb-8 text-3xl font-semibold text-pretty md:text-5xl">
           {data.post.name}
         </h2>

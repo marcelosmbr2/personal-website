@@ -3,6 +3,7 @@ import { performRequest } from "@/lib/datocms";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 interface Project {
   id: string;
@@ -49,9 +50,7 @@ export default async function Projects() {
   return (
     <section className="container mx-auto">
       <div className="mx-auto max-w-3xl text-center">
-        <Badge variant="secondary" className="mb-6">
-          Portfólio
-        </Badge>
+        <IconBrandGithub className="mx-auto mb-8 h-8 w-8 text-neutral-500 text-primary" />
         <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">
           Meus Projetos
         </h2>

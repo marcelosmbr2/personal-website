@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Badge } from "@/components/ui/badge";
+import { IconBrain } from "@tabler/icons-react";
 
 const data = [
   {
@@ -71,8 +72,8 @@ const data = [
   {
     id: 12,
     devIcon:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg",
-    name: "Solidity",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    name: "MongoDB",
   },
   {
     id: 13,
@@ -128,11 +129,9 @@ export default async function Stacks() {
   return (
     <section className="container mx-auto">
       <div className="mx-auto max-w-3xl text-center">
-        <Badge variant="secondary" className="mb-6">
-          Habilidades
-        </Badge>
+        <IconBrain className="mx-auto mb-8 h-8 w-8 text-neutral-500 text-primary" />
         <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">
-          Tecnologias
+          Habilidades
         </h2>
         <p className="mb-12 text-muted-foreground md:text-base lg:text-lg">
           Tecnologias que já utilizei e utilizo no meu dia a dia.
@@ -152,7 +151,7 @@ export default async function Stacks() {
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 flex justify-center">
-              <Badge className="mb-[-10px] text-xs">
+              <Badge variant="secondary" className="mb-[-10px] text-xs">
                 {item.name}
               </Badge>
             </div>
