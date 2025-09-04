@@ -58,6 +58,21 @@ const items = [
     description: "Aprenda tudo sobre MongoDB, NoSQL e Mongoose, do básico ao avançado e criando projetos práticos!",
     link: "https://www.udemy.com/course/mongodb-do-basico-ao-avancado-c-mongoose-e-projetos",
   },
+  {
+    devIcon:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+    name: "Laravel + Vue 3 + Inertia: From Zero to Production SPA",
+    plataform: "Udemy",
+    description: "From Zero to Launch: Build Advanced SPAs with Vue, Inertia, Laravel & Tailwind and Ship a Portfolio Project",
+    link: "https://www.udemy.com/course/master-laravel-6-with-vuejs-fullstack-development/", 
+  },
+  {
+    devIcon:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    name: "GitHub Actions - The Complete Guide",
+    plataform: "Udemy",
+    description: "Learn how to build automated CI / CD workflows with GitHub's DevOps service.",
+    link: "https://www.udemy.com/course/github-actions-the-complete-guide/", 
+  },
 ]
 
 export default function Certifications() {
