@@ -41,7 +41,7 @@ export default function Home() {
                   />
                 </a>
                 <a
-                  href="https://github.com/Marcelosmbrrr"
+                  href="https://github.com/Marcelosmbr2"
                   target="_blank"
                   className={cn(
                     "group flex aspect-square h-12 w-12 items-center justify-center rounded-full bg-secondary hover:scale-105 transition-all"
