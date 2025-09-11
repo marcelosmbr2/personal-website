@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { IconBrandGithub } from "@tabler/icons-react";
+import Image from "next/image";
 
 interface Project {
   id: string
@@ -51,13 +52,9 @@ export default async function Projects() {
     <section className="container mx-auto">
       <div className="mx-auto max-w-3xl text-center">
         <IconBrandGithub className="mx-auto mb-8 h-8 w-8 text-neutral-500 text-primary" />
-        <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">
+        <h2 className="mb-4 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">
           Meus Projetos
         </h2>
-        <p className="mb-12 text-muted-foreground md:text-base lg:text-lg">
-          Explore meus trabalhos mais recentes, como aplicações web completas e
-          experimentos.
-        </p>
       </div>
       <Tabs defaultValue="1" className="mx-auto max-w-5xl space-y-12 px-4">
         <TabsList className="w-full mx-auto max-w-sm">
@@ -113,10 +110,13 @@ export default async function Projects() {
                   key={project.id}
                   className="overflow-hidden border shadow-sm p-0 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
                 >
-                  <img
+                  <Image
                     src={project.image.url || "/placeholder.svg"}
                     alt={project.name}
                     className="aspect-[4/3] w-full object-cover object-center"
+                    width={500}
+                    height={500}
+                    loading="lazy"
                   />
                   <div className="px-6 py-4 flex flex-col h-48">
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">

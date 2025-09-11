@@ -3,6 +3,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 export function SkillCard({ skill, index }: { skill: any; index: number }) {
     const [imageLoaded, setImageLoaded] = React.useState(false)
@@ -27,15 +28,17 @@ export function SkillCard({ skill, index }: { skill: any; index: number }) {
               <span className="text-sm text-muted-foreground">?</span>
             </div>
           ) : (
-            <img
+            <Image
               alt={skill.name}
               src={skill.devIcon || "/placeholder.svg"}
               className={cn(
-                "h-16 w-16 object-contain transition-opacity duration-300",
+                "object-contain transition-opacity duration-300",
                 imageLoaded ? "opacity-100" : "opacity-0",
               )}
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageError(true)}
+              width={50}
+              height={50}
               loading="lazy"
             />
           )}

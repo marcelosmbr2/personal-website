@@ -1,5 +1,6 @@
 import { performRequest } from "@/lib/datocms";
 import { IconBrandBlogger } from "@tabler/icons-react";
+import Image from "next/image";
 
 interface Post {
   id: string;
@@ -123,10 +124,15 @@ export default async function Post({
       </div>
       <article className="mx-auto w-full max-w-2xl px-4">
         <figure className="mb-4">
-          <img
+          <Image
             src={data.post.image.url}
             alt="Digital art by Anonymous"
             className="rounded-md"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
+            loading="lazy"
           />
           <figcaption>{""}</figcaption>
         </figure>

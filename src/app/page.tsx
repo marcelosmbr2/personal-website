@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { 
@@ -11,9 +12,10 @@ import {
 
 export default function Home() {
   return (
-    <section className="relative container mx-auto flex items-start justify-center pt-8">
+    <section className="relative container mx-auto flex items-start justify-center pt-4">
       <div className="relative z-10 container">
         <div className="mx-auto flex flex-col items-center">
+        <Badge variant="secondary" className="mb-12">Next.js 15</Badge>
           <div className="flex flex-col items-center gap-6 text-center">
             <div>
               <h1 className="mb-6 text-5xl font-bold tracking-tight text-pretty lg:text-7xl">

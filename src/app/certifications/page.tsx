@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { IconCertificate } from "@tabler/icons-react"
+import Image from "next/image"
 
 const items = [
   {
@@ -81,9 +82,6 @@ export default function Certifications() {
       <div className="mx-auto max-w-3xl text-center mb-12">
         <IconCertificate className="mx-auto mb-8 h-8 w-8 text-primary" />
         <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-5xl lg:mb-6">Cursos</h2>
-        <p className="mb-12 text-muted-foreground md:text-base lg:text-lg">
-          Conhecimento validado por cursos reconhecidos no mercado.
-        </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -91,7 +89,7 @@ export default function Certifications() {
           <Card key={index} className="flex flex-col h-full">
             <CardHeader className="pb-4">
               <div className="mx-auto mb-4 bg-white dark:bg-neutral-800 size-16 rounded-xl border border-background shadow flex items-center justify-center">
-                <img alt={item.name} src={item.devIcon || "/placeholder.svg"} className="h-10 w-10 object-contain" />
+                <Image alt={item.name} src={item.devIcon || "/placeholder.svg"} className="object-contain" width={40} height={40} />
               </div>
               <Badge variant="secondary" className="w-fit mx-auto mb-2">
                 {item.plataform}
