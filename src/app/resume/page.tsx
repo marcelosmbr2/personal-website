@@ -18,7 +18,7 @@ const experiences: ExperienceItem[] = [
     period: "11/2024 – Presente",
     location: "Remoto",
     description:
-      "Desenvolvimento de uma aplicação de agendamento de reservas em clubes esportivos. Oferece um gerenciador para clubes, enquanto jogadores podem reservar partidas, se inscrever em torneios e realizar outras atividades. A aplicação tem como objetivo facilitar a interação entre usuários e clubes.",
+      "Desenvolvimento de uma aplicação moderna e responsiva para clubes esportivos, conectando-os diretamente a seus clientes. O sistema possui um painel administrativo para gerenciar e fornecer suporte aos usuários, uma dashboard para clubes administrarem seu negócio, incluindo quadras, horários, partidas, torneios, aulas e demais atividades e serviços, e uma dashboard para jogadores, permitindo buscar clubes, reservar partidas públicas ou privadas, gerenciar seu perfil, inscrever-se em torneios, agendar aulas e acompanhar suas atividades. A plataforma inclui notificações, envio de e-mails, autenticação e autorização de usuários, gerenciamento de filas e jobs para processamento assíncrono, além de integração com pagamentos e outras funcionalidades.",
     technologies: [
       "Laravel",
       "PHP",
@@ -33,8 +33,7 @@ const experiences: ExperienceItem[] = [
       "GitHub",
       "MySQL",
       "CI/CD",
-      "Digital Ocean",
-      "Cursor AI",
+      "Digital Ocean"
     ],
   },
   {
@@ -76,7 +75,7 @@ const experiences: ExperienceItem[] = [
     period: "08/2021 – 07/2023",
     location: "Remoto",
     description:
-      "Atuei como desenvolvedor da plataforma para o gerenciamento, planejamento e execução de missões utilizando drones para o controle biológico de pragas que viria a ser utilizada pela empresa Birdview. Neste período foi desenvolvido um software para criação de rotas programáticas a serem executadas por drones em plantações, e fiquei encarregado de criar uma plataforma em que as missões poderiam ser gerenciadas, e em que esse software estaria integrado.",
+      "Atuei como desenvolvedor da plataforma para o gerenciamento, planejamento e execução de missões utilizando drones no controle biológico de pragas. Foi desenvolvido um software para criação de rotas programáticas a serem executadas pelos drones com Mapbox, e fiquei encarregado de criar uma plataforma em que essas missões poderiam ser gerenciadas e em que esse software estaria integrado. A plataforma foi estruturada como um sistema multi-tenancy, contemplando diferentes tipos de usuários, como administradores, gerentes, pilotos e clientes, cada um com permissões e funções específicas. As rotas eram criadas, salvas e vinculadas a missões ou ordens de serviço, que por sua vez geravam logs detalhados utilizados na elaboração de relatórios para acompanhamento e finalização das missões.",
     technologies: ["Laravel", "React.js", "JavaScript", "PHP", "CSS3", "HTML5", "GitHub", "MySQL"],
   },
   {
@@ -85,7 +84,7 @@ const experiences: ExperienceItem[] = [
     period: "04/2021 – 08/2021",
     location: "Pelotas, RS",
     description:
-      "Desenvolvimento de módulos da plataforma Helpdesk, utilizada na escola para o gerenciamento de solicitações e criação da documentação do software.",
+      "Atuei no desenvolvimento de módulos da plataforma open-source Helpdezk, aplicando conhecimentos em PHP, jQuery e componentes do Bootstrap para implementar novas funcionalidades.",
     technologies: ["PHP", "jQuery", "MySQL", "CSS", "HTML5", "GitHub", "Smarty Engine", "JavaScript"],
   },
 ]
@@ -102,7 +101,7 @@ export default async function Stacks() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-8 flex justify-center gap-3">
           <Button size="lg" variant="secondary" asChild>
-            <a href="/docs/cv.pdf" target="_blank" className="flex items-center gap-2">
+            <a href="/docs/cv-ptbr.pdf" target="_blank" className="flex items-center gap-2">
               <IconDownload size={20} />
               Ver Currículo
             </a>
