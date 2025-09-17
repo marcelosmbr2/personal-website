@@ -25,7 +25,7 @@ export default function Home() {
                 Dev <span className="text-primary">Full Stack</span>
               </h1>
               <p className="mx-auto max-w-3xl text-muted-foreground lg:text-xl leading-relaxed mt-8">
-                Meu nome é Marcelo, sou desenvolvedor de software com experiência full stack e especializado em PHP, Laravel e React.js.
+                Meu nome é Marcelo, sou desenvolvedor de software com experiência full stack, especializado em PHP e no ecosistema Laravel.
               </p>
             </div>
             <div className="mt-4 flex flex-col items-center gap-6">
