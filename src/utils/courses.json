@@ -1,0 +1,9 @@
+[
+	{
+		"name": "Formação em Engenharia de Software",
+		"description": "Essa formação contempla as principais disciplinas da engenharia de software, como gestão de requisitos, design e arquitetura de software, microserviços, devops e monitoramento, testes automatizados entre outras.",
+		"plataform": "Alura",
+		"link": "https://www.alura.com.br/formacao-engenharia-software",
+		"status": "Pending"
+	}
+]

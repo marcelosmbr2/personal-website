@@ -1,0 +1,34 @@
+[
+	{
+		"name": "Portfolio",
+		"image": "https://via.placeholder.com/150",
+		"description": "Portfolio pessoal construído com Next.js 15 e DatoCMS.",
+		"technologies": "Next.js 15,DatoCMS ",
+		"link": "https://github.com/Marcelosmbr2/personal-website",
+		"status": "Completed"
+	},
+	{
+		"name": "Laravel Queues",
+		"image": "https://via.placeholder.com/150",
+		"description": "Aplicativo simples construído com Laravel para estudar filas e monitoramento com Horizon.",
+		"technologies": "Laravel 11,Horizon,Queues,Redis,Mailhog,Docker",
+		"link": "https://github.com/Marcelosmbr2/laravel-queue-horizon",
+		"status": "Completed"
+	},
+	{
+		"name": "Laravel Cache Telescope",
+		"image": "https://via.placeholder.com/150",
+		"description": "Aplicativo simples construído com Laravel para estudar cache e monitoramento com Telescope.",
+		"technologies": "Laravel 11,Telescope,Redis,Docker",
+		"link": "https://github.com/Marcelosmbr2/laravel-cache-telescope",
+		"status": "Completed"
+	},
+	{
+		"name": "Spring Framework",
+		"image": "https://via.placeholder.com/150",
+		"description": "Estudo dos fundamentos e funcionalidades do framework Spring.",
+		"technologies": "Java,Spring",
+		"link": "https://github.com/Marcelosmbr2/spring-basic",
+		"status": "Completed"
+	}
+]
