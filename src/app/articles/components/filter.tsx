@@ -149,6 +149,7 @@ export function PostsFilter() {
 				value={search}
 				onChange={handleSearchChange}
 				defaultValue={searchParams.get("search")?.toString()}
+				disabled
 			/>
 			<div className="flex items-center gap-2">
 				{isMobile ? (
