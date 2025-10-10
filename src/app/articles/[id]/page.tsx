@@ -182,9 +182,10 @@ export default async function Post({
 										</blockquote>
 									);
 
-								default:
+								default: {
 									const _exhaustiveCheck: never = block;
 									return _exhaustiveCheck;
+								}
 							}
 						},
 					)}

@@ -70,7 +70,7 @@ export default async function ArticlesPage(props: {
 		return "/articles/" + postId;
 	}
 
-	let filteredPosts = allPosts.filter((post: Post) => {
+	const filteredPosts = allPosts.filter((post: Post) => {
 		if (category === "todas") return true;
 		return post.category.toLowerCase() === category.toLowerCase();
 	});
