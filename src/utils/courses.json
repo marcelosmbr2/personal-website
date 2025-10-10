@@ -1,9 +1,23 @@
 [
 	{
 		"name": "Formação em Engenharia de Software",
-		"description": "Essa formação contempla as principais disciplinas da engenharia de software, como gestão de requisitos, design e arquitetura de software, microserviços, devops e monitoramento, testes automatizados entre outras.",
+		"description": "Essa formação oferece uma visão completa da área, abordando disciplinas como arquitetura e design de sistemas, testes de software, gestão de projetos, infraestrutura e deploy.",
 		"plataform": "Alura",
 		"link": "https://www.alura.com.br/formacao-engenharia-software",
+		"status": "Pending"
+	},
+	{
+		"name": "Formação em DevOps",
+		"description": "Essa formação ensina práticas de integração e entrega contínua, virtualização e provisionamento de infraestrutura, conteinerização e monitoramento de sistemas.",
+		"plataform": "Alura",
+		"link": "https://www.alura.com.br/formacao-engenharia-software",
+		"status": "Pending"
+	},
+	{
+		"name": "Formação em Cibersegurança",
+		"description": "Essa formação ensina a proteger aplicações e redes, abordando identificação de vulnerabilidades, testes de segurança, criação de firewalls, configuração de servidores seguros e desenvolvimento seguro de software.",
+		"plataform": "Alura",
+		"link": "https://www.alura.com.br/formacao-ciberseguranca",
 		"status": "Pending"
 	}
 ]

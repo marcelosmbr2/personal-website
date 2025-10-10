@@ -39,55 +39,55 @@
 	],
 	"backend": [
 		{
-			"id": 8,
+			"id": 7,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
 			"name": "PHP",
 			"preferred": true
 		},
 		{
-			"id": 9,
+			"id": 8,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
 			"name": "Laravel",
 			"preferred": true
 		},
 		{
-			"id": 10,
+			"id": 9,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original.svg",
 			"name": "Symfony",
 			"preferred": true
 		},
 		{
-			"id": 13,
+			"id": 10,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
 			"name": "Node.js",
 			"preferred": false
 		},
 		{
-			"id": 10,
+			"id": 11,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
 			"name": "MySQL",
 			"preferred": true
 		},
 		{
-			"id": 11,
+			"id": 12,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
 			"name": "PostgreSQL",
 			"preferred": true
 		},
 		{
-			"id": 12,
+			"id": 13,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
 			"name": "MongoDB",
 			"preferred": false
 		},
 		{
-			"id": 13,
+			"id": 14,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
 			"name": "Redis",
 			"preferred": false
 		},
 		{
-			"id": 14,
+			"id": 15,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",
 			"name": "RabbitMQ",
 			"preferred": false
@@ -119,13 +119,13 @@
 			"preferred": false
 		},
 		{
-			"id": 22,
+			"id": 20,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
 			"name": "GitHub Actions",
 			"preferred": false
 		},
 		{
-			"id": 20,
+			"id": 21,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
 			"name": "Docker",
 			"preferred": false
@@ -133,25 +133,25 @@
 	],
 	"soft": [
 		{
-			"id": 24,
+			"id": 22,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/communication/communication-original.svg",
 			"name": "Comunicação",
 			"preferred": false
 		},
 		{
-			"id": 26,
+			"id": 23,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/teamwork/teamwork-original.svg",
 			"name": "Trabalho em Equipe",
 			"preferred": false
 		},
 		{
-			"id": 27,
+			"id": 24,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/problem-solving/problem-solving-original.svg",
 			"name": "Solução de Problemas",
 			"preferred": false
 		},
 		{
-			"id": 28,
+			"id": 25,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/leadership/leadership-original.svg",
 			"name": "Proatividade",
 			"preferred": false

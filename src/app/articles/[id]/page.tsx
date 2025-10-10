@@ -1,5 +1,5 @@
+import Head from "next/head";
 import { performRequest } from "@/lib/datocms";
-import { IconBrandBlogger } from "@tabler/icons-react";
 import Image from "next/image";
 
 interface Post {
@@ -103,7 +103,7 @@ export default async function Post({
 	);
 
 	const renderParagraph = (paragraph: Paragraph, pIndex: number) => (
-		<p key={pIndex} className="my-2">
+		<p key={pIndex} className="my-2 text-justify">
 			{paragraph.children.map((child, childIndex) => {
 				if (child.type === "span") {
 					return renderSpan(child, childIndex);
@@ -115,14 +115,16 @@ export default async function Post({
 	);
 
 	return (
-		<section className="container mx-auto">
-			<div className="mx-auto text-center">
-				<IconBrandBlogger className="mx-auto mb-8 h-8 w-8 text-neutral-500 text-primary" />
-				<h2 className="mb-8 text-3xl font-semibold text-pretty md:text-5xl">
-					{data.post.name}
-				</h2>
-			</div>
-			<article className="mx-auto w-full max-w-2xl px-4">
+		<>
+			<Head>
+				<title>Welcome</title>
+				<link rel="preconnect" href="https://rsms.me/" />
+				<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+			</Head>
+			<h2 className="my-12 text-center text-2xl font-semibold text-pretty">
+				{data.post.name}
+			</h2>
+			<article className="mx-auto w-full max-w-3xl py-4">
 				<figure className="mb-4">
 					<Image
 						src={data.post.image.url}
@@ -179,6 +181,6 @@ export default async function Post({
 					},
 				)}
 			</article>
-		</section>
+		</>
 	);
 }
