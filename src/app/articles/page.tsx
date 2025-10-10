@@ -23,6 +23,7 @@ interface Post {
 }
 
 interface SearchParams {
+	search?: string;
 	category?: "all" | "technology" | "philosophy";
 	items?: "15" | "25" | "50";
 	sortBy?: "_createdAt" | "name";
@@ -53,7 +54,8 @@ export default async function ArticlesPage(props: {
 	searchParams?: Promise<SearchParams>;
 }) {
 	const searchParams = await props.searchParams;
-	const category = searchParams?.category || "todas";
+	const search = searchParams?.search || "";
+	const category = searchParams?.category || "tecnologia";
 	const itemsPerPage = Number(searchParams?.items) || 15;
 	const sortBy = (searchParams?.sortBy || "_createdAt") as keyof Post;
 
@@ -71,9 +73,14 @@ export default async function ArticlesPage(props: {
 	}
 
 	const filteredPosts = allPosts.filter((post: Post) => {
-		if (category === "todas") return true;
 		return post.category.toLowerCase() === category.toLowerCase();
 	});
+
+	if (search) {
+		filteredPosts.filter((post: Post) => {
+			return post.name.toLowerCase().includes(search.toLowerCase());
+		});
+	}
 
 	filteredPosts.sort((a: Post, b: Post) => {
 		const aValue = a[sortBy];
@@ -102,7 +109,7 @@ export default async function ArticlesPage(props: {
 				<link rel="preconnect" href="https://rsms.me/" />
 				<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 			</Head>
-			<div className="w-full max-w-3xl mx-auto pt-10 px-4 sm:px-6 lg:px-8">
+			<div className="w-full max-w-3xl mx-auto pt-10 px-4 sm:px-6 lg:px-8 mb-8">
 				<div className="flex justify-between items-center">
 					<h2 className="my-4 text-2xl font-semibold text-pretty">Blog</h2>
 					<Button variant="ghost">

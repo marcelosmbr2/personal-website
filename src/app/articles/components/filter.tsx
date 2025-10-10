@@ -26,7 +26,7 @@ import { IconFilter } from "@tabler/icons-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useDebouncedCallback } from "use-debounce";
 
-type CategoryValue = "todas" | "tecnologia" | "filosofia";
+type CategoryValue = "tecnologia" | "filosofia";
 type ItemsValue = "15" | "25" | "50";
 type SortByValue = "_createdAt" | "name";
 
@@ -52,7 +52,7 @@ export function PostsFilter() {
 		searchParams.get("search") || "",
 	);
 	const [category, setCategory] = React.useState<CategoryValue>(
-		(searchParams.get("category") as CategoryValue) || "todas",
+		(searchParams.get("category") as CategoryValue) || "tecnologia",
 	);
 	const [items, setItems] = React.useState<ItemsValue>(
 		(searchParams.get("items") as ItemsValue) || "15",
@@ -103,7 +103,7 @@ export function PostsFilter() {
 	};
 
 	const handleClear = () => {
-		setCategory("todas");
+		setCategory("tecnologia");
 		setItems("15");
 		setSortBy("_createdAt");
 		setPage("1");
@@ -126,7 +126,6 @@ export function PostsFilter() {
 
 	const getCategoryLabel = (): string => {
 		const labels: Record<string, string> = {
-			all: "Todas",
 			technology: "Tecnologia",
 			philosophy: "Filosofia",
 		};
@@ -259,7 +258,6 @@ function FilterForm({
 					value={category}
 					onValueChange={setCategory}
 				>
-					<ToggleGroupItem value="todas">Todas</ToggleGroupItem>
 					<ToggleGroupItem value="tecnologia">Tecnologia</ToggleGroupItem>
 					<ToggleGroupItem value="filosofia">Filosofia</ToggleGroupItem>
 				</ToggleGroup>
