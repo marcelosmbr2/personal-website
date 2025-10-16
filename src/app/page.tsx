@@ -344,19 +344,6 @@ export default function WelcomePage() {
 										{experience.description}
 									</p>
 
-									{experience.tasks && experience.tasks.length > 0 && (
-										<ul className="list-disc ms-6 mt-3 space-y-1.5">
-											{experience.tasks.map((task, taskIndex) => (
-												<li
-													key={taskIndex}
-													className="ps-1 text-sm text-gray-600 dark:text-neutral-400"
-												>
-													{task}
-												</li>
-											))}
-										</ul>
-									)}
-
 									{experience.technologies &&
 										experience.technologies.length > 0 && (
 											<div className="mt-3 flex flex-wrap gap-2">
