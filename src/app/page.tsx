@@ -39,7 +39,7 @@ export default function WelcomePage() {
 							Marcelo Moreira
 						</h1>
 						<p className="text-sm text-gray-600 dark:text-neutral-400">
-							Engenheiro de Software
+							Desenvolvedor Full Stack
 						</p>
 					</div>
 				</div>
