@@ -10,7 +10,7 @@
 	{
 		"name": "Laravel Queues",
 		"image": "/images/projects/laravel.webp",
-		"description": "Aplicativo simples construído com Laravel para estudar filas e monitoramento com Horizon.",
+		"description": "Estudo de filas, jobs assíncronos e monitoramento com Horizon.",
 		"technologies": "Laravel 11,Horizon,Queues,Redis,Mailhog,Docker",
 		"link": "https://github.com/Marcelosmbr2/laravel-queue-horizon",
 		"status": "Completed"
@@ -18,7 +18,7 @@
 	{
 		"name": "Laravel Cache Telescope",
 		"image": "/images/projects/laravel.webp",
-		"description": "Aplicativo simples construído com Laravel para estudar cache e monitoramento com Telescope.",
+		"description": "Estudo de cache e monitoramento com Telescope.",
 		"technologies": "Laravel 11,Telescope,Redis,Docker",
 		"link": "https://github.com/Marcelosmbr2/laravel-cache-telescope",
 		"status": "Completed"
