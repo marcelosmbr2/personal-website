@@ -66,7 +66,7 @@ export default function WelcomePage() {
 					</p>
 					<div className="mt-5 flex items-center gap-x-4">
 						<a
-							href="mailto:marcelo@example.com"
+							href="mailto:marcelosmbr.dev@outlook.com"
 							className="inline-flex items-center justify-center size-10 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-800"
 							aria-label="Email"
 						>
@@ -94,7 +94,7 @@ export default function WelcomePage() {
 						</a>
 
 						<a
-							href="https://wa.me/5511999999999"
+							href="https://wa.me/5553991082653"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="inline-flex items-center justify-center size-10 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-800"
