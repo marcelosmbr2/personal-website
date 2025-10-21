@@ -8,6 +8,14 @@
 		"status": "Completed"
 	},
 	{
+		"name": "Deploy com IaC",
+		"image": "/images/projects/nextjs.webp",
+		"description": "Deploy de uma aplicação Laravel na AWS com Terraform e Ansible",
+		"technologies": "AWS,EC2,Terraform,Ansible,Laravel",
+		"link": "https://github.com/marcelosmbr2/laravel-deploy-iac",
+		"status": "Completed"
+	},
+	{
 		"name": "Laravel Queues",
 		"image": "/images/projects/laravel.webp",
 		"description": "Estudo de filas, jobs assíncronos e monitoramento com Horizon.",
