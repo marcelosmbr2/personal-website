@@ -9,7 +9,7 @@
 	},
 	{
 		"name": "Deploy com IaC",
-		"image": "/images/projects/nextjs.webp",
+		"image": "/images/projects/terraform.webp",
 		"description": "Deploy de uma aplicação Laravel na AWS com Terraform e Ansible",
 		"technologies": "AWS,EC2,Terraform,Ansible,Laravel",
 		"link": "https://github.com/marcelosmbr2/laravel-deploy-iac",
