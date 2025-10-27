@@ -8,11 +8,11 @@
 		"status": "Completed"
 	},
 	{
-		"name": "Deploy com IaC",
+		"name": "Infraestrutura como Código",
 		"image": "/images/projects/terraform.webp",
-		"description": "Deploy de uma aplicação Laravel na AWS com Terraform e Ansible",
+		"description": "Implantação de uma aplicação Laravel na AWS utilizando Terraform e Ansible",
 		"technologies": "AWS,EC2,Terraform,Ansible,Laravel",
-		"link": "https://github.com/marcelosmbr2/laravel-deploy-iac",
+		"link": "https://github.com/marcelosmbr2/iac-terraform-ansible.git",
 		"status": "Completed"
 	},
 	{
