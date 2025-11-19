@@ -8,6 +8,14 @@
 		"status": "Completed"
 	},
 	{
+		"name": "Laravel MCP",
+		"image": "/images/projects/laravel.webp",
+		"description": "Estudo de servidor MCP com Laravel.",
+		"technologies": "Laravel,MCP",
+		"link": "https://github.com/marcelosmbr2/laravel-mcp",
+		"status": "Completed"
+	},
+	{
 		"name": "Infraestrutura como Código",
 		"image": "/images/projects/terraform.webp",
 		"description": "Implantação de uma aplicação Laravel na AWS utilizando Terraform e Ansible",

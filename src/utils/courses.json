@@ -11,13 +11,13 @@
 		"description": "Essa formação ensina práticas de integração e entrega contínua, virtualização e provisionamento de infraestrutura, conteinerização e monitoramento de sistemas.",
 		"plataform": "Alura",
 		"link": "https://www.alura.com.br/formacao-engenharia-software",
-		"status": "Pending"
+		"status": "Completed"
 	},
 	{
-		"name": "Formação em Cibersegurança",
-		"description": "Essa formação ensina a proteger aplicações e redes, abordando identificação de vulnerabilidades, testes de segurança, criação de firewalls, configuração de servidores seguros e desenvolvimento seguro de software.",
+		"name": "Carreira Desenvolvedor PHP",
+		"description": "Essa carreira cobre desde os fundamentos da linguagem PHP até o desenvolvimento de aplicações web completas utilizando frameworks como Laravel e Symfony.",
 		"plataform": "Alura",
-		"link": "https://www.alura.com.br/formacao-ciberseguranca",
+		"link": "https://www.alura.com.br/carreiras/desenvolvimento-backend-php",
 		"status": "Pending"
-	}
+	}	
 ]
