@@ -40,6 +40,14 @@
 		"status": "Completed"
 	},
 	{
+		"name": "Laravel Evolution API",
+		"image": "/images/projects/laravel.webp",
+		"description": "Enviando notificações via Whatsapp com Evolution API.",
+		"technologies": "Laravel, Evolution API, Docker",
+		"link": "https://github.com/marcelosmbr2/laravel-evolution-api",
+		"status": "Completed"
+	},
+	{
 		"name": "Spring Framework",
 		"image": "/images/projects/spring.webp",
 		"description": "Estudo dos fundamentos e funcionalidades do framework Spring.",
