@@ -1,20 +1,19 @@
-import Head from "next/head";
-import Link from "next/link";
 import {
-	IconDownload,
-	IconBrandLinkedin,
 	IconBrandGithub,
-	IconMail,
+	IconBrandLinkedin,
 	IconBrandWhatsapp,
 	IconBrandYoutube,
+	IconDownload,
+	IconMail,
 } from "@tabler/icons-react";
-import skillsData from "@/utils/skills.json";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { Articles } from "@/components/articles/articles";
 import coursesData from "@/utils/courses.json";
 import experiencesData from "@/utils/experiences.json";
 import projectsData from "@/utils/projects.json";
-import Image from "next/image";
-
-import { Articles } from "@/components/articles/articles";
+import skillsData from "@/utils/skills.json";
 
 export default function WelcomePage() {
 	return (
@@ -246,7 +245,7 @@ export default function WelcomePage() {
 						</a>
 					</div>
 					<div className="space-y-6">
-						{projectsData.map((project, index) => (
+						{projectsData.slice(1, 4).map((project, index) => (
 							<article key={index} className="group">
 								<a
 									href={project.link || "#"}

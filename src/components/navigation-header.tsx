@@ -1,10 +1,10 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
+import * as React from "react";
 import { useEffect, useState } from "react";
-import { ThemeToggle } from "./theme-toggle";
 import { MobileSidebar } from "./mobile-sidebar";
+import { ThemeToggle } from "./theme-toggle";
 
 export function NavigationHeader() {
 	const [activeSection, setActiveSection] = useState("home");

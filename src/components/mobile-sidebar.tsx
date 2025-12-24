@@ -1,5 +1,9 @@
 "use client";
 
+import { IconMenu2 } from "@tabler/icons-react";
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
 	Sheet,
 	SheetContent,
@@ -7,11 +11,7 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { IconMenu2 } from "@tabler/icons-react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import Link from "next/link";
-import { useState } from "react";
 
 export const MobileSidebar = () => {
 	const isMobile = useIsMobile();

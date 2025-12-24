@@ -1,9 +1,8 @@
-import * as React from "react";
-import Link from "next/link";
-import Image from "next/image";
-
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 import { performRequest } from "@/lib/datocms";
 
 interface Post {

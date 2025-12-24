@@ -26,22 +26,16 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
-type CategoryValue = "tecnologia" | "filosofia";
-type ItemsValue = "15" | "25" | "50";
-type SortByValue = "_createdAt" | "name";
+type StatusValue = "completed" | "in-progress";
 
 interface FilterFormProps extends React.ComponentProps<"form"> {
-	category: CategoryValue;
-	setCategory: (value: CategoryValue) => void;
-	items: ItemsValue;
-	setItems: (value: ItemsValue) => void;
-	sortBy: SortByValue;
-	setSortBy: (value: SortByValue) => void;
+	status: StatusValue;
+	setStatus: (value: StatusValue) => void;
 	handleClear: () => void;
 	handleSubmit: (e: React.FormEvent) => void;
 }
 
-export function PostsFilter() {
+export function ProjectsFilter() {
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const { replace } = useRouter();
@@ -51,14 +45,8 @@ export function PostsFilter() {
 	const [search, setSearch] = React.useState<string>(
 		searchParams.get("search") || "",
 	);
-	const [category, setCategory] = React.useState<CategoryValue>(
-		(searchParams.get("category") as CategoryValue) || "tecnologia",
-	);
-	const [items, setItems] = React.useState<ItemsValue>(
-		(searchParams.get("items") as ItemsValue) || "15",
-	);
-	const [sortBy, setSortBy] = React.useState<SortByValue>(
-		(searchParams.get("sortBy") as SortByValue) || "_createdAt",
+	const [status, setStatus] = React.useState<StatusValue>(
+		(searchParams.get("status") as StatusValue) || "completed",
 	);
 	const [page, setPage] = React.useState<string>(
 		searchParams.get("page") || "1",
@@ -73,7 +61,7 @@ export function PostsFilter() {
 					newParams.set(key, value);
 				} else if (key === "page" && value !== "1") {
 					newParams.set(key, value);
-				} else if (key !== "category") {
+				} else if (key !== "status") {
 					newParams.delete(key);
 				}
 			});
@@ -103,9 +91,7 @@ export function PostsFilter() {
 	};
 
 	const handleClear = () => {
-		setCategory("tecnologia");
-		setItems("15");
-		setSortBy("_createdAt");
+		setStatus("completed");
 		setPage("1");
 		setSearch("");
 		replace(pathname);
@@ -115,29 +101,19 @@ export function PostsFilter() {
 		e.preventDefault();
 		updateURL({
 			search,
-			category,
-			items,
-			sortBy,
+			status,
 			page: "1",
 		});
 		setPage("1");
 		setOpen(false);
 	};
 
-	const getCategoryLabel = (): string => {
+	const getStatusLabel = (): string => {
 		const labels: Record<string, string> = {
-			technology: "Tecnologia",
-			philosophy: "Filosofia",
+			completed: "Concluído",
+			"in-progress": "Em progresso",
 		};
-		return labels[category] || category;
-	};
-
-	const getSortByLabel = (): string => {
-		const labels: Record<SortByValue, string> = {
-			_createdAt: "Data",
-			name: "Nome",
-		};
-		return labels[sortBy];
+		return labels[status] || status;
 	};
 
 	return (
@@ -149,7 +125,6 @@ export function PostsFilter() {
 				value={search}
 				onChange={handleSearchChange}
 				defaultValue={searchParams.get("search")?.toString()}
-				disabled
 			/>
 			<div className="flex items-center gap-2">
 				{isMobile ? (
@@ -168,12 +143,8 @@ export function PostsFilter() {
 							</DrawerHeader>
 							<FilterForm
 								className="px-4"
-								category={category}
-								setCategory={setCategory}
-								items={items}
-								setItems={setItems}
-								sortBy={sortBy}
-								setSortBy={setSortBy}
+								status={status}
+								setStatus={setStatus}
 								handleClear={handleClear}
 								handleSubmit={handleSubmit}
 							/>
@@ -202,12 +173,8 @@ export function PostsFilter() {
 									</p>
 								</div>
 								<FilterForm
-									category={category}
-									setCategory={setCategory}
-									items={items}
-									setItems={setItems}
-									sortBy={sortBy}
-									setSortBy={setSortBy}
+									status={status}
+									setStatus={setStatus}
 									handleClear={handleClear}
 									handleSubmit={handleSubmit}
 								/>
@@ -218,16 +185,7 @@ export function PostsFilter() {
 
 				<div className="flex flex-wrap gap-2">
 					<span className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-md dark:bg-neutral-800 dark:text-neutral-300">
-						Categoria: {getCategoryLabel()}
-					</span>
-					<span className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-md dark:bg-neutral-800 dark:text-neutral-300">
-						Página: {page}
-					</span>
-					<span className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-md dark:bg-neutral-800 dark:text-neutral-300">
-						Itens: {items}
-					</span>
-					<span className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-md dark:bg-neutral-800 dark:text-neutral-300">
-						Ordem: {getSortByLabel()}
+						Status: {getStatusLabel()}
 					</span>
 				</div>
 			</div>
@@ -237,12 +195,8 @@ export function PostsFilter() {
 
 function FilterForm({
 	className,
-	category,
-	setCategory,
-	items,
-	setItems,
-	sortBy,
-	setSortBy,
+	status,
+	setStatus,
 	handleClear,
 	handleSubmit,
 }: FilterFormProps) {
@@ -252,44 +206,20 @@ function FilterForm({
 			onSubmit={handleSubmit}
 		>
 			<div className="grid gap-2">
-				<Label>Categoria</Label>
+				<Label>Status</Label>
 				<ToggleGroup
 					type="single"
 					variant="outline"
-					value={category}
-					onValueChange={setCategory}
+					value={status}
+					onValueChange={(val) => {
+						if (val) setStatus(val as StatusValue);
+					}}
 				>
-					<ToggleGroupItem value="tecnologia">Tecnologia</ToggleGroupItem>
-					<ToggleGroupItem value="filosofia">Filosofia</ToggleGroupItem>
+					<ToggleGroupItem value="completed">Concluídos</ToggleGroupItem>
+					<ToggleGroupItem value="in-progress">Em progresso</ToggleGroupItem>
 				</ToggleGroup>
 			</div>
 
-			<div className="grid gap-2">
-				<Label>Itens</Label>
-				<ToggleGroup
-					type="single"
-					variant="outline"
-					value={items}
-					onValueChange={setItems}
-				>
-					<ToggleGroupItem value="15">15</ToggleGroupItem>
-					<ToggleGroupItem value="25">25</ToggleGroupItem>
-					<ToggleGroupItem value="50">50</ToggleGroupItem>
-				</ToggleGroup>
-			</div>
-
-			<div className="grid gap-2">
-				<Label>Ordenar por</Label>
-				<ToggleGroup
-					type="single"
-					variant="outline"
-					value={sortBy}
-					onValueChange={setSortBy}
-				>
-					<ToggleGroupItem value="_createdAt">Data</ToggleGroupItem>
-					<ToggleGroupItem value="name">Nome</ToggleGroupItem>
-				</ToggleGroup>
-			</div>
 
 			<div className="flex gap-2">
 				<Button type="submit" className="flex-1">
@@ -304,6 +234,6 @@ function FilterForm({
 					Limpar
 				</Button>
 			</div>
-		</form>
+		</form >
 	);
 }

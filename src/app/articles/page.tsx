@@ -1,12 +1,11 @@
-import * as React from "react";
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { performRequest } from "@/lib/datocms";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 import { Button } from "@/components/ui/button";
+import { performRequest } from "@/lib/datocms";
 
 import { PostsFilter } from "./components/filter";
 

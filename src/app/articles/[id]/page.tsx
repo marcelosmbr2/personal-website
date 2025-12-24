@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { performRequest } from "@/lib/datocms";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { performRequest } from "@/lib/datocms";
 
 interface Post {
 	id: string;
