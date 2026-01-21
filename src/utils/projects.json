@@ -3,15 +3,23 @@
 		"name": "Portfolio",
 		"image": "/images/projects/nextjs.webp",
 		"description": "Portfolio pessoal construído com Next.js 15 e DatoCMS.",
-		"technologies": "Next.js 15,DatoCMS ",
+		"technologies": "Next.js,DatoCMS",
 		"link": "https://github.com/Marcelosmbr2/personal-website",
 		"status": "Completed"
+	},
+	{
+		"name": "Symfony Framework",
+		"image": "/images/projects/symfony.webp",
+		"description": "Estudo dos fundamentos e funcionalidades do framework Symfony.",
+		"technologies": "PHP,Symfony",
+		"link": "https://github.com/marcelosmbr2/symfony-framework",
+		"status": "in-progress"
 	},
 	{
 		"name": "Laravel MCP",
 		"image": "/images/projects/laravel.webp",
 		"description": "Estudo de servidor MCP com Laravel.",
-		"technologies": "Laravel,MCP",
+		"technologies": "PHP,Laravel,MCP",
 		"link": "https://github.com/marcelosmbr2/laravel-mcp",
 		"status": "Completed"
 	},
@@ -27,7 +35,7 @@
 		"name": "Laravel Queues",
 		"image": "/images/projects/laravel.webp",
 		"description": "Estudo de filas, jobs assíncronos e monitoramento com Horizon.",
-		"technologies": "Laravel 11,Horizon,Queues,Redis,Mailhog,Docker",
+		"technologies": "PHP,Laravel,Horizon,Queues,Redis,Mailhog,Docker",
 		"link": "https://github.com/Marcelosmbr2/laravel-queue-horizon",
 		"status": "Completed"
 	},
@@ -35,7 +43,7 @@
 		"name": "Laravel Cache Telescope",
 		"image": "/images/projects/laravel.webp",
 		"description": "Estudo de cache e monitoramento com Telescope.",
-		"technologies": "Laravel 11,Telescope,Redis,Docker",
+		"technologies": "PHP,Laravel,Telescope,Redis,Docker",
 		"link": "https://github.com/Marcelosmbr2/laravel-cache-telescope",
 		"status": "Completed"
 	},
@@ -43,7 +51,7 @@
 		"name": "Laravel Evolution API",
 		"image": "/images/projects/laravel.webp",
 		"description": "Enviando notificações via Whatsapp com Evolution API.",
-		"technologies": "Laravel, Evolution API, Docker",
+		"technologies": "PHP,Laravel,Evolution API,Docker",
 		"link": "https://github.com/marcelosmbr2/laravel-evolution-api",
 		"status": "Completed"
 	},

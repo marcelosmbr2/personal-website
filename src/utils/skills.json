@@ -93,41 +93,43 @@
 			"preferred": false
 		}
 	],
-	"devops": [
+	"cms": [
 		{
 			"id": 16,
-			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-			"name": "AWS",
+			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg",
+			"name": "WordPress",
 			"preferred": false
-		},
+		}
+	],
+	"devops": [
 		{
 			"id": 17,
-			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original.svg",
-			"name": "DO",
-			"preferred": false
-		},
-		{
-			"id": 18,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
 			"name": "Git",
 			"preferred": false
 		},
 		{
-			"id": 19,
+			"id": 18,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
 			"name": "GitHub",
 			"preferred": false
 		},
 		{
-			"id": 20,
+			"id": 19,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
 			"name": "GitHub Actions",
 			"preferred": false
 		},
 		{
-			"id": 21,
+			"id": 20,
 			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
 			"name": "Docker",
+			"preferred": false
+		},
+		{
+			"id": 21,
+			"devIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+			"name": "AWS",
 			"preferred": false
 		}
 	],

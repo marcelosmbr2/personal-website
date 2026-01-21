@@ -171,7 +171,32 @@ export default function WelcomePage() {
 						<dl className="flex flex-col sm:flex-row gap-1">
 							<dt className="min-w-40">
 								<span className="block text-sm text-gray-500 dark:text-neutral-500">
-									Outros:
+									CMS:
+								</span>
+							</dt>
+							<dd>
+								<ul>
+									{skillsData.cms.map((skill, index) => (
+										<li
+											key={skill.id}
+											className={`me-1 ${index < skillsData.cms.length - 1 ? "after:content-[',']" : ""} inline-flex items-center text-sm text-gray-800 dark:text-neutral-200`}
+										>
+											<img
+												src={skill.devIcon}
+												alt={skill.name}
+												className="shrink-0 size-4 me-1"
+											/>
+											{skill.name}
+										</li>
+									))}
+								</ul>
+							</dd>
+						</dl>
+
+						<dl className="flex flex-col sm:flex-row gap-1">
+							<dt className="min-w-40">
+								<span className="block text-sm text-gray-500 dark:text-neutral-500">
+									DevOps:
 								</span>
 							</dt>
 							<dd>
