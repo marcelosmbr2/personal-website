@@ -247,7 +247,7 @@ export default function WelcomePage() {
 						<h2 className="font-medium text-gray-800 dark:text-neutral-200">
 							Projetos
 						</h2>
-						<a
+						<Link
 							href="/projects"
 							className="inline-flex items-center gap-x-1 text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
 						>
@@ -267,7 +267,7 @@ export default function WelcomePage() {
 								<path d="M5 12h14" />
 								<path d="m12 5 7 7-7 7" />
 							</svg>
-						</a>
+						</Link>
 					</div>
 					<div className="space-y-6">
 						{projectsData.slice(1, 4).map((project, index) => (
